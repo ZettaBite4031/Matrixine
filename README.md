@@ -9,7 +9,6 @@
 <img src="https://img.shields.io/badge/Size-191.3KiB-green" alt="191.3115 Kibibytes of python code!">
 <img src="https://img.shields.io/badge/Linter-Black-black" alt="Linted using Black to ensure PEP8 compliance">
 <img src="https://img.shields.io/badge/Discord.py-v2.5.2-blue" alt="Matrixine is made using Discord.py v2.5.2">
-<img src="https://img.shields.io/travis/ZettaBite4031/MatrixineDiscordBot" alt="Linted using Black to ensure PEP8 compliance">
 </p>
 
 What is Matrixine? After all it is a made up word I thought sounded cool. Matrixine started as a hobby project more than anything. Simply just "Hey, this sounded cool."
