@@ -11,6 +11,8 @@
 <img src="https://img.shields.io/badge/Discord.py-v2.5.2-blue" alt="Matrixine is made using Discord.py v2.5.2">
 </p>
 
+Click [**here**](https://discord.com/oauth2/authorize?client_id=1163917903435931659&permissions=8&scope=bot%20applications.commands) to add Matrixine to your server. Currently it requests Administrator, which isn't the best, but that will change as I further develop it.
+
 What is Matrixine? After all it is a made up word I thought sounded cool. Matrixine started as a hobby project more than anything. Simply just "Hey, this sounded cool."
 
 #### That was *four* years ago now.
