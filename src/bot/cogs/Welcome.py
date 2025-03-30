@@ -16,6 +16,7 @@ class Welcomer(commands.Cog):
         self.database = self.bot.MONGO_DB
         self.guilds = self.database["Guilds"]
         self.leveling = self.database["Leveling"]
+        self.moderation = self.database["Moderation"]
 
     @commands.hybrid_command(
         name="update_guild_info",
@@ -29,7 +30,13 @@ class Welcomer(commands.Cog):
     async def on_guild_join(self, guild: discord.Guild):
         result = self.guilds.find_one(guild.id)
         if result:
-            return
+            self.guilds.delete_one({"_id": guild.id})
+        result = self.leveling.find_one(guild.id)
+        if result:
+            self.leveling.delete_one({"_id": guild.id})
+        result = self.moderation.find_one(guild.id)
+        if result:
+            self.moderation.delete_one({"_id": guild.id})
 
         data = {
             "join": {
@@ -75,7 +82,7 @@ class Welcomer(commands.Cog):
                 "name": guild.name,
                 "owner_id": guild.owner_id,
                 "server_prefix": self.bot.PREFIX,
-                "blacklisted_channels": [],
+                "blacklisted_phrases": [],
                 "data": data,
             }
         )
@@ -108,8 +115,28 @@ class Welcomer(commands.Cog):
                 "randomized": False,
                 "members": member,
                 "embed_settings": embed,
+                "no_xp_channels": [],
             }
         )
+
+        moderation = {
+            "punishments": {
+                str(guild.owner_id): {
+                    "times_muted": 0,
+                    "mute_reasons": [""],
+                    "times_warned": 0,
+                    "warn_reasons": [""],
+                    "times_kicked": 0,
+                    "kick_reasons": [""],
+                    "times_banned": 0,
+                    "ban_reasons": [""],
+                }
+            },
+        }
+
+        self.moderation.insert_one({"_id": guild.id, "moderation": moderation})
+
+
 
     @commands.Cog.listener()
     async def on_guild_remove(self, guild: discord.Guild):
