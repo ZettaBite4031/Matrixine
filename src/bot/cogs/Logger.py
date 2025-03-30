@@ -274,7 +274,9 @@ class Logger(commands.Cog):
             return
         if not (logs := result["data"]["log"]):
             return
-        if not (role_delete_channel_id := logs["role_delete_channel"]):
+        try: 
+            role_delete_channel_id = logs["role_delete_channel"]
+        except KeyError:
             return
         role_delete_channel = self.bot.get_channel(int(role_delete_channel_id))
 

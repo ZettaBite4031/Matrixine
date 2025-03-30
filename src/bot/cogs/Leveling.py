@@ -72,11 +72,16 @@ class Leveling(commands.Cog):
     async def process_xp(self, msg: discord.Message):
         user = msg.author
         guild = msg.guild
-        if not (result := self.leveling.find_one(guild.id)):
-            return
         if not self.guilds.find_one(guild.id)["data"]["member"]["leveling_enabled"]:
             return
-
+        if not (result := self.leveling.find_one(guild.id)):
+            return
+        try:
+            if msg.channel.id in result["no_xp_channels"]:
+                return
+        except KeyError:
+            pass
+        
         members = result["members"]
         try:
             member = members[str(user.id)]
