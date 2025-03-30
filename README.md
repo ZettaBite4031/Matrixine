@@ -51,6 +51,9 @@ Here's a short roadmap of features I'm planning on adding to Matrixine. <sub>Thi
     - [ ] Automatic warn removal
 - [ ] More Customizability for general Matrixine things?
 
+### Down the line...
+- [ ] Website!
+
 ## Matrixine is still in Early Alpha
 Expect bugs! Due to the hiccups I've had in the past, a lot of the code is dated and deprecated, which could cause some commands to fail unexpectedly! While Matrixine's output is monitored, I have a day job to attend to, and this is a single-man project, so unfortunately any critical errors will have to wait until I am available to fix them!
 
