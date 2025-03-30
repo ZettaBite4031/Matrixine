@@ -27,6 +27,7 @@ class MatrixineBot(commands.Bot):
         self.MONGO_CLIENT = MongoClient(config.MongoLogin)
         self.MONGO_DB = self.MONGO_CLIENT["MatrixineDB"]
         self.STDOUT_ID = 1230708641481363538
+        self.START_DATETIME = dt.datetime.now(tz=dt.timezone.utc)
 
         self.LOGGER = logging.getLogger("Matrixine")
         self.LOGGER.setLevel(logging.DEBUG)

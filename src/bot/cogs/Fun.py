@@ -11,6 +11,7 @@ import discord
 from discord.ext import commands
 from urllib.parse import quote
 
+import util
 
 def _count_generator(reader):
     b = reader(1024 * 1024)
@@ -549,6 +550,19 @@ class Fun(commands.Cog):
         index = "base64" if option == "encode" else "text"
         response = f"{content}\n**=**\n{data[index]}"
         await ctx.reply(response)
+
+    @commands.hybrid_command(name="uptime")
+    async def uptime_command(self, ctx):
+        start_datetime = self.bot.START_DATETIME
+        now_datetime = dt.datetime.now(tz=dt.timezone.utc)
+        
+        uptime_timedelta = now_datetime - start_datetime
+        uptime_string = util.timedelta_to_string(uptime_timedelta)
+        embed = discord.Embed(title="Matrixine Uptime!", description=f"Matrixine has been running nonstop since \n`{start_datetime.strftime('%m-%d-%Y %H:%M:%S')}`", color=self.bot.COLOR)
+        embed.add_field(name="That's a total time of", value=f"```{uptime_string}```", inline=False)
+        embed.set_author(name="Uptime Info", icon_url=self.bot.user.avatar.url)
+        embed.set_footer(text=f"Uptime requested by {ctx.author.display_name}", icon_url=ctx.author.avatar.url)
+        await ctx.send(embed=embed)
 
 
 async def setup(bot):
