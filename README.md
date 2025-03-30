@@ -65,6 +65,6 @@ Matrixine was originally developed to be a simply music bot for "the boys"/"the 
 
 ## License Specifications
 
-To cap things off, I would like to mention that Matrixine is **not** a template, but is instead a "Source Available" service. All of the code here shall always be for noncommercial use and shall properly acknowledge the code's original author: Me. For any further licensing questions, please refer to [__The License__](https://github.com/ZettaBite4031/MatrixineDiscordBot/tree/main/LICENSE.md)
+To cap things off, I would like to mention that Matrixine is **not** a template, but is instead a "Source Available" service. All of the code here shall always be for noncommercial use and shall properly acknowledge the code's original author: Me. For any further licensing questions, please refer to [__The License__](https://github.com/ZettaBite4031/Matrixine/blob/main/LICENSE.md)
 
 "Can I use Matrixine privately?" The answer is sure. As long as I am acknowledged and no commercial use is made, I have no issues with the repo being cloned. Although, you gotta figure out how. I left you the `requirements.txt` and that should be enough. What I will mention, though, is that environment variables for config.py are loaded using dotenv. Good luck! ;P
