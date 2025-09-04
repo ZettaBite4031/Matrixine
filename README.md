@@ -62,6 +62,11 @@ Expect bugs! Due to the hiccups I've had in the past, a lot of the code is dated
 ## A Little Bit of Lore
 Matrixine was originally developed to be a simply music bot for "the boys"/"the group" while gaming or talking. Since I was the computer nerd, that burden fell onto me. Long story short, I realized I was kind of pretty ok at this thing, and so I began work on "a discord bot" quote unquote. I already had music functionality since that was Matrixine was originally built for. To be a steady, stable, and reliable source of audio streaming. Slowly, I added more and more. Generalizing the bot's use cases, expanding the powers it had. ... Then it was all deleted. Start work again, and then in Jan. of 2025, a catastrophic hard drive failure lost all the code for Matrixine another time. So I ported over the years old code from a previous iteration on a private repo. The original code worked, but it still has kinks in it. For example, discord's username change slightly warped all of the code that would work, and I know I can't catch all of it until it reers its ugly head. So that's why I've begun the process of publishing Matrixine.
 
+## Contacts
+- Discord: zettabitep
+- Telegram: zettabitep
+- Twitter (X): zettabitep
+- Email: ddayboy123@gmail.com
 
 ## License Specifications
 
